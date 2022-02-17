@@ -1,7 +1,9 @@
 import './App.css';
+import Main from './components/main';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const App = () => {
-  <h1>Configuration</h1>;
-};
+const App = () => (
+  <Main />
+);
 
 export default App;
