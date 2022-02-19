@@ -9,32 +9,33 @@ const Main = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchRooms);
+    dispatch(fetchRooms());
   }, []);
 
   return (
-    <section>
-      <div>
-        <h1>Rooms</h1>
+    <section className="d-flex flex-column align-items-center">
+      <div className="d-flex flex-column align-items-center my-5">
+        <h1>Available Rooms</h1>
         <p>Please select a room</p>
       </div>
-      <div>
+      <div className="d-flex">
         {rooms.map((room) => (
-          <Card style={{ width: '18rem' }} key={room.id}>
+          <Card style={{ width: '18rem' }} key={room.id} className="mx-2">
             <Card.Img variant="top" src="https://media-cdn.tripadvisor.com/media/photo-s/13/d8/ea/1b/a-room-at-the-beach.jpg" />
-            <Card.Body>
+            <Card.Body className="d-flex flex-column align-items-center">
               <Card.Title>
-                Room in&nbsp;
-                {room.hotel}
+                Rooms in&nbsp;
               </Card.Title>
-              <Card.Text>
+              <Card.Text className="text-secondary">
                 {room.description}
-                <ul className="d-flex unstyled">
-                  <li><Facebook /></li>
-                  <li><Twitter /></li>
-                  <li><Instagram /></li>
-                </ul>
               </Card.Text>
+              <div className="d-flex justify-content-center">
+                <ul className="d-flex main-icons p-0">
+                  <li className="mx-2 text-secondary"><Facebook /></li>
+                  <li className="mx-3 text-secondary"><Twitter /></li>
+                  <li className="mx-2 text-secondary"><Instagram /></li>
+                </ul>
+              </div>
             </Card.Body>
           </Card>
         ))}

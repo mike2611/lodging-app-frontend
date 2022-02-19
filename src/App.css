@@ -1,3 +1,7 @@
 body {
   background-color: transparent;
 }
+
+.main-icons {
+  list-style-type: none;
+}
