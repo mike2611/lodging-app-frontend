@@ -6,11 +6,11 @@ body {
   list-style-type: none;
 }
 
-.main-button{
+.main-button {
   height: 5rem;
   width: 6rem;
   background-color: #98bf11;
-  border:none;
+  border: none;
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
   display: inline-block;
@@ -20,7 +20,7 @@ body {
   flex-direction: column;
 }
 
-.main-logo{
+.main-logo {
   width: 50%;
 }
 

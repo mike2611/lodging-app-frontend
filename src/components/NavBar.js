@@ -26,6 +26,9 @@ const NavBar = () => (
           </li>
         </ul>
       </div>
+      <Routes>
+        <Route exact path="/" element={<Main />} />
+      </Routes>
     </div>
   </Router>
 );
