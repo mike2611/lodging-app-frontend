@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
@@ -8,6 +9,4 @@ const App = () => (
   <Provider store={store}>
     <NavBar />
   </Provider>
-);
-
 export default App;
