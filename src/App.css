@@ -5,3 +5,13 @@ body {
 .main-icons {
   list-style-type: none;
 }
+
+.main-button{
+  height: 5rem;
+  width: 6rem;
+  background-color: #98bf11;
+  border:none;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  display: inline-block;
+}

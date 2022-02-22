@@ -1,7 +1,9 @@
 import Card from 'react-bootstrap/Card';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Facebook, Twitter, Instagram } from 'react-bootstrap-icons';
+import {
+  Facebook, Twitter, Instagram, ArrowRightCircle,
+} from 'react-bootstrap-icons';
 import { fetchRooms } from '../redux/main/mainReducer';
 
 const Main = () => {
@@ -18,7 +20,7 @@ const Main = () => {
         <h1>Available Rooms</h1>
         <p>Please select a room</p>
       </div>
-      <div className="d-flex">
+      <div className="d-flex align-items-center">
         {rooms.map((room) => (
           <Card style={{ width: '18rem' }} key={room.id} className="mx-2">
             <Card.Img variant="top" src="https://media-cdn.tripadvisor.com/media/photo-s/13/d8/ea/1b/a-room-at-the-beach.jpg" />
@@ -39,6 +41,11 @@ const Main = () => {
             </Card.Body>
           </Card>
         ))}
+        <div className="d-flex align-items-center">
+          <button className="main-button mb-4 ms-2" type="button" aria-label="nextOptions">
+            <ArrowRightCircle className="text-white fs-3" />
+          </button>
+        </div>
       </div>
     </section>
   );
