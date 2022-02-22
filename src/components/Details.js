@@ -51,7 +51,7 @@ const Details = () => {
           <Link to="/">
             <p>DISCOVER MORE LODGING PLACES</p>
           </Link>
-          <Button>Reserve</Button>
+          <Button data-bs-toggle="modal" data-bs-target="#staticBackdrop">Reserve</Button>
         </div>
       </div>
     </section>
