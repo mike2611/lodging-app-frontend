@@ -1,5 +1,5 @@
 import Card from 'react-bootstrap/Card';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Facebook, Twitter, Instagram, ArrowRightCircle,
@@ -9,9 +9,19 @@ import { fetchRooms } from '../redux/main/mainReducer';
 const Main = () => {
   const rooms = useSelector((state) => state.mainReducer);
   const dispatch = useDispatch();
+  const [state, setState] = useState(3);
+  const visibleRooms = rooms.slice(state - 3, state);
+
+  const changeVisibleRooms = () => {
+    if (state < rooms.length) {
+      setState((prevState) => prevState + 3);
+    } else {
+      setState(3);
+    }
+  };
 
   useEffect(() => {
-    dispatch(fetchRooms());
+    if (rooms.length === 0) dispatch(fetchRooms());
   }, []);
 
   return (
@@ -21,7 +31,7 @@ const Main = () => {
         <p>Please select a room</p>
       </div>
       <div className="d-flex align-items-center">
-        {rooms.map((room) => (
+        {visibleRooms.map((room) => (
           <Card style={{ width: '18rem' }} key={room.id} className="mx-2">
             <Card.Img variant="top" src="https://media-cdn.tripadvisor.com/media/photo-s/13/d8/ea/1b/a-room-at-the-beach.jpg" />
             <Card.Body className="d-flex flex-column align-items-center">
@@ -42,7 +52,7 @@ const Main = () => {
           </Card>
         ))}
         <div className="d-flex align-items-center">
-          <button className="main-button mb-4 ms-2" type="button" aria-label="nextOptions">
+          <button className="main-button mb-4 ms-2" type="button" aria-label="nextOptions" onClick={changeVisibleRooms}>
             <ArrowRightCircle className="text-white fs-3" />
           </button>
         </div>

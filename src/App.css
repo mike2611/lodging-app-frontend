@@ -16,18 +16,12 @@ body {
   display: inline-block;
 }
 
-.nav-bar {
-  flex-direction: column;
+.nav {
+  width: 300px;
 }
 
-.main-logo {
-  width: 50%;
-}
-
-.nav-bar h1 {
-  display: flex;
-  justify-content: center;
-  font-size: 2.5rem;
+.nav-logo {
+  width: 1rem;
 }
 
 .nav-menu {
