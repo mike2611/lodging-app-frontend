@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const FETCH_ROOMS = 'lodging-app-frontend/main/FETCH_ROOMS';
-const token = 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDU3MjE2NzR9.Y8mylBjQTqrhhTZhlROXl8Mvg3GFx8plthkAK8ZH16Q';
+const token = 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDU3Mzc3MzB9.R9IIkV672R7GIdL8FJsQiVKS1CQZA_cE2QjtA2WKx2U';
 const initialState = [];
 
 export const fetchRooms = () => async (dispatch) => {
