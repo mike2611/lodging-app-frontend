@@ -18,8 +18,8 @@ const ReserveRoom = () => {
   const today = new Date().toISOString().slice(0, 10);
 
   const [inputs, setInputs] = useState({
-    checkin: today,
-    checkout: today,
+    checkin: '',
+    checkout: '',
   });
 
   const onChange = (e) => {
@@ -34,22 +34,12 @@ const ReserveRoom = () => {
       <h1>Book a room</h1>
       <hr />
       <p>
-        You have selected a room for
-        {' '}
-        {room.people_amount}
-        {' '}
-        people with a price of
-        {room.price}
-        {' '}
-        per night in the hotel
-        {hotel.name}
-        {' '}
-        in
-        {hotel.address}
-        ,
-        <strong>{hotel.name}</strong>
-        . Now please select the Check-in date and the
-        Check-out date to reserve your room.
+        {`You have selected a room for ${room.people_amount} people with a price of ${room.price} 
+        per night in the hotel ${hotel.name} in ${hotel.address}, `}
+        <strong>
+          {hotel.city}
+        </strong>
+        . Now please select the Check-in date and the Check-out date to reserve your room.
       </p>
       <Form>
         <Form.Group className="mb-3" controlId="checkin">
@@ -58,7 +48,7 @@ const ReserveRoom = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="checkout">
           <Form.Label>Check-out date</Form.Label>
-          <Form.Control name="checkout" type="date" min={inputs.checkin} value={inputs.checkin} onChange={onChange} />
+          <Form.Control name="checkout" type="date" min={inputs.checkin} value={inputs.checkout} onChange={onChange} />
         </Form.Group>
         <Button variant="primary" type="submit">
           Book now
