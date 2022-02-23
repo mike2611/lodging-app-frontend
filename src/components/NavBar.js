@@ -13,7 +13,7 @@ const NavBar = () => (
           <NavLink to="/reserve" className={({ isActive }) => (isActive ? 'active-style px-3 py-2' : 'nav-elements')}>Reserve</NavLink>
         </li>
         <li className="mb-3">
-          <NavLink to="/reservations" className={({ isActive }) => (isActive ? 'active-style px-3 py-2' : 'nav-elements')}>Reservations</NavLink>
+          <NavLink to="/my_reservations" className={({ isActive }) => (isActive ? 'active-style px-3 py-2' : 'nav-elements')}>Reservations</NavLink>
         </li>
         <li className="mb-3">
           <NavLink to="/add" className={({ isActive }) => (isActive ? 'active-style px-3 py-2' : 'nav-elements')}>Add room</NavLink>

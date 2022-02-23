@@ -51,7 +51,7 @@ const Details = () => {
           <Link to="/">
             <p>DISCOVER MORE LODGING PLACES</p>
           </Link>
-          <Button>Reserve</Button>
+          <Button href="/reserve_room/">Reserve</Button>
         </div>
       </div>
     </section>
