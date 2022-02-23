@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import Details from './components/Details';
 import MyReservations from './components/MyReservations';
 import ReserveRoom from './components/ReserveRoom';
+import Login from './components/Login';
 
 const App = () => (
   <Router>
@@ -18,6 +19,7 @@ const App = () => (
         <Route exact path="/" element={<Main />} />
       </Routes>
     </div>
+    <Login />
   </Router>
 );
 

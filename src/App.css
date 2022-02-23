@@ -46,3 +46,16 @@ body {
   color: white;
   font-weight: bold;
 }
+
+.login-image {
+  width: auto;
+  max-width: 150px;
+  height: auto;
+  max-height: 100px;
+}
+
+.login-btn {
+  background-color: #98bf11;
+  color: white;
+  border: none;
+}
