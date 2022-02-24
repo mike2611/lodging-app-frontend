@@ -1,18 +1,32 @@
-import { useDispatch } from 'react-redux';
-import React, { useState } from 'react';
-import { fetchToken } from '../redux/login/loginReducer';
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { fetchToken } from '../redux/login/loginSignupReducer';
 
 const Login = () => {
   const dispatch = useDispatch();
+  const token = useSelector((state) => state.loginSignupReducer);
   const [state, setState] = useState('');
+  const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
   const nameChange = (e) => {
     setState(e.target.value);
   };
 
   const sendName = () => {
-    dispatch(fetchToken(state));
+    if (state !== '') dispatch(fetchToken(state));
+    setMessage('The field "name" cannot be empty');
   };
+
+  const navSignup = () => {
+    navigate('/signup');
+  };
+
+  useEffect(() => {
+    if (token === 'null') setMessage("This user doesn't exist");
+    if (token !== 'null' && token !== '') navigate('/');
+  }, [token]);
 
   return (
     <section className="d-flex align-items-center ms-auto me-auto">
@@ -25,12 +39,13 @@ const Login = () => {
 
             <div className="form-outline mb-4">
               <input type="name" id="form2Example18" className="form-control form-control-lg" placeholder="Name" value={state} onChange={nameChange} />
+              <p className="text-danger mt-2">{message}</p>
             </div>
 
             <div className="d-flex justify-content-around align-items-baseline">
-              <p className="small mb-5 pb-lg-2"><a className="text-muted" href="#!">Sign Up</a></p>
+              <p className="small mb-5 pb-lg-2"><button className="text-muted btn" onClick={navSignup} type="button">Sign up</button></p>
               <div className="pt-1 mb-4">
-                <button className="py-2 px-4 login-btn" type="button" onClick={sendName}>Login</button>
+                <button className="py-2 px-4 login-btn" type="button" onClick={sendName}>Log in</button>
               </div>
             </div>
 

@@ -1,12 +1,11 @@
-/* eslint-disable react/prop-types */
 import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const PrivateRoute = (props) => {
   const { children } = props;
-  const token = useSelector((state) => state.loginReducer);
-  const isLoggedIn = token !== '';
-  console.log(isLoggedIn);
+  const token = useSelector((state) => state.loginSignupReducer);
+  const isLoggedIn = token !== 'null' && token !== '';
   const location = useLocation();
 
   return isLoggedIn ? (
@@ -18,6 +17,10 @@ const PrivateRoute = (props) => {
       state={{ from: `${location.pathname}${location.search}` }}
     />
   );
+};
+
+PrivateRoute.propTypes = {
+  children: PropTypes.element.isRequired,
 };
 
 export default PrivateRoute;
