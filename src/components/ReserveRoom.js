@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 const ReserveRoom = () => {
-  const hotel = {
-    name: 'Hamilton',
-    city: 'Buenos Aires',
-    address: 'Cabildo 2114',
-  };
-  const room = {
-    description: 'Wifi, balcony, breakfast included, bathroom with hydromassage',
-    image: 'https://picsum.photos/800',
-    price: 60,
-    people_amount: 4,
-  };
+  const rooms = useSelector((state) => state.roomsReducer);
+  const { id } = useParams();
+  const room = rooms.find((room) => room.id === parseInt(id, 10));
 
   const today = new Date().toISOString().slice(0, 10);
 
@@ -35,9 +29,9 @@ const ReserveRoom = () => {
       <hr />
       <p>
         {`You have selected a room for ${room.people_amount} people with a price of ${room.price} 
-        per night in the hotel ${hotel.name} in ${hotel.address}, `}
+        per night in the hotel ${room.hotel.name} in ${room.hotel.address}, `}
         <strong>
-          {hotel.city}
+          {room.hotel.city.name}
         </strong>
         . Now please select the Check-in date and the Check-out date to reserve your room.
       </p>
