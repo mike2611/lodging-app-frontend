@@ -15,8 +15,8 @@ const App = () => (
       <NavBar />
       <Routes>
         <Route path="/room/:roomId" exact element={<PrivateRoute><Details /></PrivateRoute>} />
-        <Route path="/reserve_room/" exact element={<ReserveRoom />} />
-        <Route path="/my_reservations/" exact element={<MyReservations />} />
+        <Route path="/reserve_room/" exact element={<PrivateRoute><ReserveRoom /></PrivateRoute>} />
+        <Route path="/my_reservations/" exact element={<PrivateRoute><MyReservations /></PrivateRoute>} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/" element={<PrivateRoute><Main /></PrivateRoute>} />
       </Routes>
