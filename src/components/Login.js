@@ -1,10 +1,13 @@
-import { useDispatch } from 'react-redux';
-import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { fetchToken } from '../redux/login/loginReducer';
 
 const Login = () => {
   const dispatch = useDispatch();
+  const token = useSelector((state) => state.loginReducer);
   const [state, setState] = useState('');
+  const navigate = useNavigate();
 
   const nameChange = (e) => {
     setState(e.target.value);
@@ -13,6 +16,10 @@ const Login = () => {
   const sendName = () => {
     dispatch(fetchToken(state));
   };
+
+  useEffect(() => {
+    if (token !== '') navigate('/');
+  }, [token]);
 
   return (
     <section className="d-flex align-items-center ms-auto me-auto">
