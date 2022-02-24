@@ -15,8 +15,8 @@ const App = () => (
     <div className="d-flex">
       <NavBar />
       <Routes>
-        <Route path="/room/:roomId" exact element={<PrivateRoute><Details /></PrivateRoute>} />
-        <Route path="/reserve_room/" exact element={<PrivateRoute><ReserveRoom /></PrivateRoute>} />
+        <Route path="/room/:id" exact element={<PrivateRoute><Details /></PrivateRoute>} />
+        <Route path="/room/:id/reserve" exact element={<PrivateRoute><ReserveRoom /></PrivateRoute>} />
         <Route path="/my_reservations/" exact element={<PrivateRoute><MyReservations /></PrivateRoute>} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />

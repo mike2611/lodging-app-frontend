@@ -49,8 +49,8 @@ Reservation.propTypes = {
   description: PropTypes.string.isRequired,
   checkin: PropTypes.string.isRequired,
   checkout: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
-  nights: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  nights: PropTypes.number.isRequired,
 };
 
 export default Reservation;

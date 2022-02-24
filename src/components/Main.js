@@ -1,14 +1,15 @@
 import Card from 'react-bootstrap/Card';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {
   Facebook, Twitter, Instagram, ArrowRightCircle,
 } from 'react-bootstrap-icons';
-import { fetchRooms } from '../redux/main/mainReducer';
+import { fetchRooms } from '../redux/rooms/roomsReducer';
 
 const Main = () => {
   const token = useSelector((state) => state.loginSignupReducer);
-  const rooms = useSelector((state) => state.mainReducer);
+  const rooms = useSelector((state) => state.roomsReducer);
   const dispatch = useDispatch();
   const [state, setState] = useState(3);
   const visibleRooms = rooms.slice(state - 3, state);
@@ -37,7 +38,9 @@ const Main = () => {
             <Card.Img variant="top" src="https://media-cdn.tripadvisor.com/media/photo-s/13/d8/ea/1b/a-room-at-the-beach.jpg" />
             <Card.Body className="d-flex flex-column align-items-center">
               <Card.Title>
-                Rooms in&nbsp;
+                <Link to={`/room/${room.id}`}>
+                  {room.hotel.name}
+                </Link>
               </Card.Title>
               <Card.Text className="text-secondary">
                 {room.description}
