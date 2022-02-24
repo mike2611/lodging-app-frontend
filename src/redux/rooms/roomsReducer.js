@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const FETCH_ROOMS = 'lodging-app-frontend/main/FETCH_ROOMS';
+const FETCH_ROOMS = 'lodging-app-frontend/rooms/FETCH_ROOMS';
 const initialState = [];
 
 export const fetchRooms = (token) => async (dispatch) => {
@@ -15,7 +15,7 @@ export const fetchRooms = (token) => async (dispatch) => {
   });
 };
 
-const mainReducer = (state = initialState, action) => {
+const roomsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ROOMS:
       return action.payload;
@@ -24,4 +24,4 @@ const mainReducer = (state = initialState, action) => {
   }
 };
 
-export default (mainReducer);
+export default (roomsReducer);
