@@ -7,6 +7,7 @@ import {
 import { fetchRooms } from '../redux/main/mainReducer';
 
 const Main = () => {
+  const token = useSelector((state) => state.loginReducer);
   const rooms = useSelector((state) => state.mainReducer);
   const dispatch = useDispatch();
   const [state, setState] = useState(3);
@@ -21,7 +22,7 @@ const Main = () => {
   };
 
   useEffect(() => {
-    if (rooms.length === 0) dispatch(fetchRooms());
+    if (rooms.length === 0) dispatch(fetchRooms(token));
   }, []);
 
   return (

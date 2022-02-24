@@ -1,10 +1,9 @@
 import axios from 'axios';
 
 const FETCH_TOKEN = 'lodging-app-frontend/login/FETCH_TOKEN';
-const initialState = [];
+const initialState = '';
 
 export const fetchToken = (name) => async (dispatch) => {
-  console.log(name);
   const response = await axios.post(`http://localhost:3000/api/v1/login?name=${name}`);
   const token = Object.values(response.data);
   dispatch({
