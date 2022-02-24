@@ -7,6 +7,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.loginReducer);
   const [state, setState] = useState('');
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
   const nameChange = (e) => {
@@ -18,7 +19,8 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (token !== '') navigate('/');
+    if (token === 'error') setMessage("This user doesn't exist");
+    if (token !== 'error' && token !== '') navigate('/');
   }, [token]);
 
   return (
@@ -32,6 +34,7 @@ const Login = () => {
 
             <div className="form-outline mb-4">
               <input type="name" id="form2Example18" className="form-control form-control-lg" placeholder="Name" value={state} onChange={nameChange} />
+              <p className="text-danger mt-2">{message}</p>
             </div>
 
             <div className="d-flex justify-content-around align-items-baseline">

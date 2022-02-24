@@ -4,12 +4,19 @@ const FETCH_TOKEN = 'lodging-app-frontend/login/FETCH_TOKEN';
 const initialState = '';
 
 export const fetchToken = (name) => async (dispatch) => {
-  const response = await axios.post(`http://localhost:3000/api/v1/login?name=${name}`);
-  const token = Object.values(response.data);
-  dispatch({
-    type: FETCH_TOKEN,
-    payload: token[0],
-  });
+  try {
+    const response = await axios.post(`http://localhost:3000/api/v1/login?name=${name}`);
+    const token = Object.values(response.data);
+    dispatch({
+      type: FETCH_TOKEN,
+      payload: token[0],
+    });
+  } catch (e) {
+    dispatch({
+      type: FETCH_TOKEN,
+      payload: 'error',
+    });
+  }
 };
 
 const loginReducer = (state = initialState, action) => {
