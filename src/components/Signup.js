@@ -1,13 +1,11 @@
-import { useSelector, useDispatch } from 'react-redux';
-import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchToken } from '../redux/login/loginReducer';
 
-const Login = () => {
+const Signup = () => {
   const dispatch = useDispatch();
-  const token = useSelector((state) => state.loginReducer);
   const [state, setState] = useState('');
-  const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
   const nameChange = (e) => {
@@ -18,14 +16,9 @@ const Login = () => {
     dispatch(fetchToken(state));
   };
 
-  const navSignup = () => {
-    navigate('/signup');
+  const navLogin = () => {
+    navigate('/login');
   };
-
-  useEffect(() => {
-    if (token === 'null') setMessage("This user doesn't exist");
-    if (token !== 'null' && token !== '') navigate('/');
-  }, [token]);
 
   return (
     <section className="d-flex align-items-center ms-auto me-auto">
@@ -34,17 +27,16 @@ const Login = () => {
 
           <form>
 
-            <h3 className="fw-normal mb-3 pb-3">Log in</h3>
+            <h3 className="fw-normal mb-3 pb-3">Sign up</h3>
 
             <div className="form-outline mb-4">
               <input type="name" id="form2Example18" className="form-control form-control-lg" placeholder="Name" value={state} onChange={nameChange} />
-              <p className="text-danger mt-2">{message}</p>
             </div>
 
             <div className="d-flex justify-content-around align-items-baseline">
-              <p className="small mb-5 pb-lg-2"><button className="text-muted btn" onClick={navSignup} type="button">Sign up</button></p>
+              <p className="small mb-5 pb-lg-2"><button className="text-muted btn" onClick={navLogin} type="button">Log in</button></p>
               <div className="pt-1 mb-4">
-                <button className="py-2 px-4 login-btn" type="button" onClick={sendName}>Log in</button>
+                <button className="py-2 px-4 login-btn" type="button" onClick={sendName}>Sign Up</button>
               </div>
             </div>
 
@@ -57,4 +49,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

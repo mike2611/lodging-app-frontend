@@ -14,7 +14,7 @@ export const fetchToken = (name) => async (dispatch) => {
   } catch (e) {
     dispatch({
       type: FETCH_TOKEN,
-      payload: 'error',
+      payload: 'null',
     });
   }
 };
