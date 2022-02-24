@@ -15,7 +15,8 @@ const Login = () => {
   };
 
   const sendName = () => {
-    dispatch(fetchToken(state));
+    if (state !== '') dispatch(fetchToken(state));
+    setMessage('The field "name" cannot be empty');
   };
 
   const navSignup = () => {

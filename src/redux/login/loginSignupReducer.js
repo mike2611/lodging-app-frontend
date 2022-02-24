@@ -26,7 +26,7 @@ export const createUser = (name, birthDate) => async (dispatch) => {
     const token = Object.values(response.data);
     dispatch({
       type: CREATE_USER,
-      payload: token[0],
+      payload: token[1],
     });
   } catch (e) {
     dispatch({
