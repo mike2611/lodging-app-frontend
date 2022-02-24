@@ -1,11 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { fetchToken } from '../redux/login/loginReducer';
+import { fetchToken } from '../redux/login/loginSignupReducer';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const token = useSelector((state) => state.loginReducer);
+  const token = useSelector((state) => state.loginSignupReducer);
   const [state, setState] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();

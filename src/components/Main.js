@@ -7,7 +7,7 @@ import {
 import { fetchRooms } from '../redux/main/mainReducer';
 
 const Main = () => {
-  const token = useSelector((state) => state.loginReducer);
+  const token = useSelector((state) => state.loginSignupReducer);
   const rooms = useSelector((state) => state.mainReducer);
   const dispatch = useDispatch();
   const [state, setState] = useState(3);

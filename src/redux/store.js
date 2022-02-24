@@ -2,11 +2,11 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import mainReducer from './main/mainReducer';
-import loginReducer from './login/loginReducer';
+import loginSignupReducer from './login/loginSignupReducer';
 
 const reducer = combineReducers({
   mainReducer,
-  loginReducer,
+  loginSignupReducer,
 });
 
 const store = createStore(

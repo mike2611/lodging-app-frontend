@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const PrivateRoute = (props) => {
   const { children } = props;
-  const token = useSelector((state) => state.loginReducer);
+  const token = useSelector((state) => state.loginSignupReducer);
   const isLoggedIn = token !== 'null' && token !== '';
   const location = useLocation();
 
