@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { clearReservationMsg, postReservation } from '../redux/reservations/reservationsReducer';
 
 const ReserveRoom = () => {
+  const token = useSelector((state) => state.loginSignupReducer);
+  const message = useSelector((state) => state.reservationsReducer.message);
   const rooms = useSelector((state) => state.roomsReducer);
+  const dispatch = useDispatch();
   const { id } = useParams();
   const room = rooms.find((room) => room.id === parseInt(id, 10));
 
@@ -23,6 +27,20 @@ const ReserveRoom = () => {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const reservation = {
+      room_id: id,
+      check_in_date: inputs.checkin,
+      check_out_date: inputs.checkout,
+    };
+    dispatch(postReservation(token, reservation));
+  };
+
+  useEffect(() => {
+    dispatch(clearReservationMsg);
+  }, []);
+
   return (
     <section className="container">
       <h1>Book a room</h1>
@@ -35,7 +53,7 @@ const ReserveRoom = () => {
         </strong>
         . Now please select the Check-in date and the Check-out date to reserve your room.
       </p>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="checkin">
           <Form.Label>Check-in date</Form.Label>
           <Form.Control name="checkin" type="date" min={today} value={inputs.checkin} onChange={onChange} />
@@ -48,6 +66,7 @@ const ReserveRoom = () => {
           Book now
         </Button>
       </Form>
+      { message !== '' && <p>{message}</p> }
     </section>
   );
 };

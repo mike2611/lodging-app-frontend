@@ -5,8 +5,8 @@ import Reservation from './Reservation';
 import { fetchReservations } from '../redux/reservations/reservationsReducer';
 
 const MyReservations = () => {
-  const token = useSelector((state) => state.loginReducer);
-  const reservations = useSelector((state) => state.reservationsReducer);
+  const token = useSelector((state) => state.loginSignupReducer);
+  const reservations = useSelector((state) => state.reservationsReducer.reservations);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -49,8 +49,8 @@ const MyReservations = () => {
                 city={reservation.room.hotel.city.name}
                 address={reservation.room.hotel.address}
                 description={reservation.room.description}
-                checkin={reservation.check_in_date}
-                checkout={reservation.check_out_date}
+                checkin={reservation.check_in_date.slice(0, 10)}
+                checkout={reservation.check_out_date.slice(0, 10)}
                 price={reservation.room.price}
                 nights={reservation.nights}
               />
@@ -69,8 +69,8 @@ const MyReservations = () => {
                 city={reservation.room.hotel.city.name}
                 address={reservation.room.hotel.address}
                 description={reservation.room.description}
-                checkin={reservation.check_in_date}
-                checkout={reservation.check_out_date}
+                checkin={reservation.check_in_date.slice(0, 10)}
+                checkout={reservation.check_out_date.slice(0, 10)}
                 price={reservation.room.price}
                 nights={reservation.nights}
               />
@@ -89,8 +89,8 @@ const MyReservations = () => {
                 city={reservation.room.hotel.city.name}
                 address={reservation.room.hotel.address}
                 description={reservation.room.description}
-                checkin={reservation.check_in_date}
-                checkout={reservation.check_out_date}
+                checkin={reservation.check_in_date.slice(0, 10)}
+                checkout={reservation.check_out_date.slice(0, 10)}
                 price={reservation.room.price}
                 nights={reservation.nights}
               />
