@@ -6,7 +6,6 @@ const PrivateRoute = (props) => {
   const { children } = props;
   const token = useSelector((state) => state.loginReducer);
   const isLoggedIn = token !== '';
-  console.log(isLoggedIn);
   const location = useLocation();
 
   return isLoggedIn ? (

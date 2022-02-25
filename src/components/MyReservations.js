@@ -6,7 +6,7 @@ import { fetchReservations } from '../redux/reservations/reservationsReducer';
 
 const MyReservations = () => {
   const token = useSelector((state) => state.loginReducer);
-  const reservations = useSelector((state) => state.reservationsReducer);
+  const reservations = useSelector((state) => state.reservationsReducer.reservations);
   const dispatch = useDispatch();
 
   useEffect(() => {

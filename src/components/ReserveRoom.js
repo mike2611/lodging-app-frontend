@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { postReservation } from '../redux/reservations/reservationsReducer';
+import { clearReservationMsg, postReservation } from '../redux/reservations/reservationsReducer';
 
 const ReserveRoom = () => {
   const token = useSelector((state) => state.loginReducer);
-  const reservations = useSelector((state) => state.reservationsReducer);
+  const message = useSelector((state) => state.reservationsReducer.message);
   const rooms = useSelector((state) => state.roomsReducer);
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -27,15 +27,19 @@ const ReserveRoom = () => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const reservation = {
       room_id: id,
       check_in_date: inputs.checkin,
       check_out_date: inputs.checkout,
     };
     dispatch(postReservation(token, reservation));
-    console.log(reservations);
   };
+
+  useEffect(() => {
+    dispatch(clearReservationMsg);
+  }, []);
 
   return (
     <section className="container">
@@ -62,6 +66,7 @@ const ReserveRoom = () => {
           Book now
         </Button>
       </Form>
+      { message !== '' && <p>{message}</p> }
     </section>
   );
 };
