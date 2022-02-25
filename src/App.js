@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Main from './components/Main';
 import NavBar from './components/NavBar';
+import NavBarMobile from './components/NavBarMobile';
 import Details from './components/Details';
 import MyReservations from './components/MyReservations';
 import ReserveRoom from './components/ReserveRoom';
@@ -12,8 +13,13 @@ import PrivateRoute from './components/PrivateRoute';
 
 const App = () => (
   <Router>
-    <div className="d-flex">
-      <NavBar />
+    <div className="d-flex flex-column flex-md-row">
+      <div className="d-md-block d-none">
+        <NavBar />
+      </div>
+      <div className="d-flex justify-content-center me-4 d-md-none">
+        <NavBarMobile />
+      </div>
       <Routes>
         <Route path="/room/:id" exact element={<PrivateRoute><Details /></PrivateRoute>} />
         <Route path="/room/:id/reserve" exact element={<PrivateRoute><ReserveRoom /></PrivateRoute>} />
