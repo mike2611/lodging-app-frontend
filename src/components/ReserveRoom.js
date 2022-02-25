@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { clearReservationMsg, postReservation } from '../redux/reservations/reservationsReducer';
 
 const ReserveRoom = () => {
-  const token = useSelector((state) => state.loginReducer);
+  const token = useSelector((state) => state.loginSignupReducer);
   const message = useSelector((state) => state.reservationsReducer.message);
   const rooms = useSelector((state) => state.roomsReducer);
   const dispatch = useDispatch();
