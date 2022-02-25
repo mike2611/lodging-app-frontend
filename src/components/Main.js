@@ -32,7 +32,7 @@ const Main = () => {
         <h1>Available Rooms</h1>
         <p>Please select a room</p>
       </div>
-      <div className="d-flex align-items-center">
+      <div className="d-flex flex-column flex-md-row align-items-center">
         {visibleRooms.map((room) => (
           <Card style={{ width: '18rem' }} key={room.id} className="mx-2">
             <Card.Img variant="top" src="https://media-cdn.tripadvisor.com/media/photo-s/13/d8/ea/1b/a-room-at-the-beach.jpg" />
@@ -56,9 +56,10 @@ const Main = () => {
           </Card>
         ))}
         <div className="d-flex align-items-center">
-          <button className="main-button mb-4 ms-2" type="button" aria-label="nextOptions" onClick={changeVisibleRooms}>
+          <button className="main-button main-semicircle-button mb-4 ms-2 d-none d-md-block" type="button" aria-label="nextOptions" onClick={changeVisibleRooms}>
             <ArrowRightCircle className="text-white fs-3" />
           </button>
+          <button className="main-button text-white py-2 px-3 my-2 d-md-none" type="button" onClick={changeVisibleRooms}>Next Rooms</button>
         </div>
       </div>
     </section>

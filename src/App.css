@@ -7,13 +7,15 @@ body {
 }
 
 .main-button {
-  height: 5rem;
-  width: 6rem;
   background-color: #98bf11;
   border: none;
+}
+
+.main-semicircle-button {
+  height: 5rem;
+  width: 6rem;
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
-  display: inline-block;
 }
 
 .nav-logo {
