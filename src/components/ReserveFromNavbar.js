@@ -45,39 +45,46 @@ const ReserveFromNavbar = () => {
   }, []);
 
   return (
-    <section className="container">
-      <h1>Book a room</h1>
-      <hr />
-      <p>
-        {`In this section you can reserve a room if you have the code for a specific room (many 
-        hotels provides this number when you contact them directly). If you don't have one, go 
-        to the home page to look for a room that matches your desires.`}
-      </p>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="checkin">
-          <Form.Label>Room code</Form.Label>
-          <Form.Control name="room_id" type="number" value={inputs.room_id} onChange={onChange} />
-        </Form.Group>
-        {(room === undefined)
-          ? 'There is no room with that code'
-          : `You have selected a room for ${room.people_amount} people with a price of ${room.price} 
-        per night in the hotel ${room.hotel.name} in ${room.hotel.address}, `}
-        <p>
-          Please select the Check-in date and the Check-out date to reserve your room.
-        </p>
-        <Form.Group className="mb-3" controlId="checkin">
-          <Form.Label>Check-in date</Form.Label>
-          <Form.Control name="checkin" type="date" min={today} value={inputs.checkin} onChange={onChange} />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="checkout">
-          <Form.Label>Check-out date</Form.Label>
-          <Form.Control name="checkout" type="date" min={inputs.checkin} value={inputs.checkout} onChange={onChange} />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Book now
-        </Button>
-      </Form>
-      { message !== '' && <p>{message}</p> }
+    <section className="new-item-section vh-100">
+      <div className="new-item-inner-div h-100" />
+      <div className="d-flex align-items-center w-100 vh-100">
+        <div className="d-flex flex-column align-items-center new-item-content">
+          <h1 className="roboto-font-bold text-center">BOOK A ROOM</h1>
+          <hr className="w-50" />
+          <p className="roboto-font-medium w-75">
+            {`In this section you can reserve a room if you have the code for a specific room (many 
+            hotels provides this number when you contact them directly). If you don't have one, go 
+            to the home page to look for a room that matches your desires.`}
+          </p>
+          <Form className="d-flex flex-column align-items-center w-75" onSubmit={handleSubmit}>
+            <Form.Group className="roboto-font-medium w-md-25" controlId="checkin">
+              <Form.Label>Room code</Form.Label>
+              <Form.Control name="room_id" type="number" value={inputs.room_id} onChange={onChange} />
+            </Form.Group>
+            <small className="text-center">
+              {(room === undefined)
+                ? 'There is no room with that code'
+                : `You have selected a room for ${room.people_amount} people with a price of ${room.price} 
+              per night in the hotel ${room.hotel.name} in ${room.hotel.address}. `}
+            </small>
+            <p className="roboto-font-medium mt-3 text-center">
+              Please select the Check-in date and the Check-out date to reserve your room.
+            </p>
+            <Form.Group className="mb-3 roboto-font-medium w-md-25" controlId="checkin">
+              <Form.Label>Check-in date</Form.Label>
+              <Form.Control name="checkin" type="date" min={today} value={inputs.checkin} onChange={onChange} />
+            </Form.Group>
+            <Form.Group className="mb-3 roboto-font-medium w-md-25" controlId="checkout">
+              <Form.Label>Check-out date</Form.Label>
+              <Form.Control name="checkout" type="date" min={inputs.checkin} value={inputs.checkout} onChange={onChange} />
+            </Form.Group>
+            <Button className="new-item-btn mt-2" type="submit">
+              Book now
+            </Button>
+          </Form>
+          { message !== '' && <p>{message}</p> }
+        </div>
+      </div>
     </section>
   );
 };

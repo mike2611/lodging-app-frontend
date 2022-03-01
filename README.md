@@ -6,6 +6,14 @@
 
 [RoR Project](https://github.com/nachosala89/lodging-app-backend)
 
+### Desktop version
+
+![Desktop version](./desktop.png)
+
+### Mobile version
+
+![Mobile version](./mobile.png)
+
 ## Built With
 ReactJs
 Redux
@@ -44,6 +52,10 @@ React-Bootstrap
 - GitHub: [LOctavio](https://github.com/LOctavio)
 - Twitter: [@Octavio_ram431](https://twitter.com/Octavio_ram431)
 - LinkedIn: [Luis Octavio Ramirez Cruz](https://www.linkedin.com/in/luis-octavio-ramirez-cruz/) 
+
+## Acknowledgment
+
+- Thanks to Murat Korkmaz, whose [design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) inspired us for the site layout.
 
 ## 🤝 Contributing
 
