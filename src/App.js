@@ -11,6 +11,7 @@ import ReserveFromNavbar from './components/ReserveFromNavbar';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import PrivateRoute from './components/PrivateRoute';
+import DeleteRoom from './components/DeleteRoom';
 
 const App = () => (
   <Router>
@@ -29,6 +30,7 @@ const App = () => (
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
         <Route exact path="/" element={<PrivateRoute><Main /></PrivateRoute>} />
+        <Route path="/delete" element={<PrivateRoute><DeleteRoom /></PrivateRoute>} />
       </Routes>
     </div>
   </Router>
