@@ -50,7 +50,6 @@ export const createUser = (name, birthDate) => async (dispatch) => {
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
     case CURRENT_SESSION:
-      console.log(action.payload);
       return action.payload;
     case LOGGIN:
       return action.payload;
