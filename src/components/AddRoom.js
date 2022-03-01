@@ -11,6 +11,7 @@ const AddRoom = () => {
   const token = useSelector((state) => state.loginSignupReducer);
   const cities = useSelector((state) => state.citiesReducer);
   const hotels = useSelector((state) => state.hotelsReducer);
+  const rooms = useSelector((state) => state.roomsReducer);
   const dispatch = useDispatch();
   const [cityId, setCityId] = useState(0);
   const [hotelId, setHotelId] = useState(0);
@@ -107,6 +108,7 @@ const AddRoom = () => {
           </button>
         </div>
       </Form>
+      {rooms.length === 0 ? <p className="text-success mt-2"> Room created succesfully </p> : <p />}
     </section>
   );
 };
