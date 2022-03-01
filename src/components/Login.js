@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { fetchToken } from '../redux/login/loginSignupReducer';
+import { loggin } from '../redux/login/loginSignupReducer';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const Login = () => {
   };
 
   const sendName = () => {
-    if (state !== '') dispatch(fetchToken(state));
+    if (state !== '') dispatch(loggin(state));
     setMessage('The field "name" cannot be empty');
   };
 
