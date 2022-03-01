@@ -4,7 +4,6 @@ const FETCH_CITIES = 'lodging-app-frontend/cities/FETCH_CITIES';
 const initialState = [];
 
 export const fetchCities = (token) => async (dispatch) => {
-  console.log('Its being call');
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
