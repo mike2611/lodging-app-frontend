@@ -41,14 +41,17 @@ body {
   text-decoration: none;
   color: #5a5a5a;
   font-weight: bold;
+  font-family: 'Roboto', sans-serif;
 }
 
 .active-style {
   width: 200px;
   background-color: #98bf11;
+  border-radius: 5%;
   text-decoration: none;
   color: white;
   font-weight: bold;
+  font-family: 'Roboto', sans-serif;
 }
 
 .login-image {
