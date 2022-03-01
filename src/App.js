@@ -13,6 +13,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import PrivateRoute from './components/PrivateRoute';
 import DeleteRoom from './components/DeleteRoom';
+import AddRoom from './components/AddRoom';
 import { currentSession } from './redux/login/loginSignupReducer';
 
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/" element={<PrivateRoute><Main /></PrivateRoute>} />
+          <Route exact path="/add" element={<PrivateRoute><AddRoom /></PrivateRoute>} />
           <Route path="/delete" element={<PrivateRoute><DeleteRoom /></PrivateRoute>} />
         </Routes>
       </div>

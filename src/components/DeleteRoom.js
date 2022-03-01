@@ -39,7 +39,7 @@ const DeleteRoom = () => {
       <div className="d-flex flex-column flex-md-row align-items-center">
         {visibleRooms.map((room) => (
           <Card style={{ width: '18rem' }} key={room.id} className="mx-2">
-            <Card.Img variant="top" src="https://media-cdn.tripadvisor.com/media/photo-s/13/d8/ea/1b/a-room-at-the-beach.jpg" />
+            <Card.Img variant="top" src={room.image !== '' ? room.image : 'https://media-cdn.tripadvisor.com/media/photo-s/13/d8/ea/1b/a-room-at-the-beach.jpg'} />
             <Card.Body className="d-flex flex-column align-items-center">
               <Card.Title>
                 <Link to={`/room/${room.id}`}>
