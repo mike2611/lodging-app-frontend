@@ -35,7 +35,7 @@ const Login = () => {
 
           <form>
 
-            <h3 className="fw-normal mb-3 pb-3">Log in</h3>
+            <h3 className="fw-normal mb-3 pb-3 roboto-font">Log in</h3>
 
             <div className="form-outline mb-4">
               <input type="name" id="form2Example18" className="form-control form-control-lg" placeholder="Name" value={state} onChange={nameChange} />
@@ -43,9 +43,9 @@ const Login = () => {
             </div>
 
             <div className="d-flex justify-content-around align-items-baseline">
-              <p className="small mb-5 pb-lg-2"><button className="text-muted btn" onClick={navSignup} type="button">Sign up</button></p>
+              <p className="small mb-5 pb-lg-2"><button className="text-muted btn slab-font" onClick={navSignup} type="button">Sign up</button></p>
               <div className="pt-1 mb-4">
-                <button className="py-2 px-4 login-btn" type="button" onClick={sendName}>Log in</button>
+                <button className="py-2 px-4 login-btn roboto-font" type="button" onClick={sendName}>Log in</button>
               </div>
             </div>
 
