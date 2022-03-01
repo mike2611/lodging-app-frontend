@@ -3,10 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { clearReservationMsg, postReservation } from '../redux/reservations/reservationsReducer';
+import { fetchCities } from '../redux/cities/citiesReducer';
 
-const ReserveFromNavbar = () => {
+const AddRoom = () => {
   const token = useSelector((state) => state.loginSignupReducer);
-  // const rooms = useSelector((state) => state.roomsReducer);
+  const cities = useSelector((state) => state.citiesReducer);
   const dispatch = useDispatch();
 
   const [inputs, setInputs] = useState({
@@ -15,7 +16,9 @@ const ReserveFromNavbar = () => {
     checkout: '',
   });
 
-  // const [room, setRoom] = useState();
+  useEffect(() => {
+    if (cities.length === 0) dispatch(fetchCities(token));
+  }, []);
 
   const onChange = (e) => {
     setInputs({
@@ -52,7 +55,11 @@ const ReserveFromNavbar = () => {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">City Example</Dropdown.Item>
+            {cities.map((city) => (
+              <Dropdown.Item href="#/action-1" key={city.id}>
+                {city.name}
+              </Dropdown.Item>
+            ))}
           </Dropdown.Menu>
         </Dropdown>
         <Dropdown>
@@ -90,4 +97,4 @@ const ReserveFromNavbar = () => {
   );
 };
 
-export default ReserveFromNavbar;
+export default AddRoom;
