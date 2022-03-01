@@ -1,20 +1,30 @@
 import axios from 'axios';
 
-const FETCH_TOKEN = 'lodging-app-frontend/loginSignup/FETCH_TOKEN';
+const CURRENT_SESSION = 'lodging-app-frontend/loginSignup/CURRENT_SESSION';
+const LOGGIN = 'lodging-app-frontend/loginSignup/LOGGIN';
 const CREATE_USER = 'lodging-app-frontend/loginSignup/CREATE_USER';
 const initialState = '';
 
-export const fetchToken = (name) => async (dispatch) => {
+export const currentSession = () => async (dispatch) => {
+  const token = sessionStorage.getItem('auth_token');
+  dispatch({
+    type: LOGGIN,
+    payload: token || 'null',
+  });
+};
+
+export const loggin = (name) => async (dispatch) => {
   try {
     const response = await axios.post(`http://localhost:3000/api/v1/login?name=${name}`);
     const token = Object.values(response.data);
+    sessionStorage.setItem('auth_token', token);
     dispatch({
-      type: FETCH_TOKEN,
+      type: LOGGIN,
       payload: token[0],
     });
   } catch (e) {
     dispatch({
-      type: FETCH_TOKEN,
+      type: LOGGIN,
       payload: 'null',
     });
   }
@@ -24,6 +34,7 @@ export const createUser = (name, birthDate) => async (dispatch) => {
   try {
     const response = await axios.post(`http://localhost:3000/api/v1/signup?name=${name}`, { params: { birth_date: birthDate } });
     const token = Object.values(response.data);
+    sessionStorage.setItem('auth_token', token);
     dispatch({
       type: CREATE_USER,
       payload: token[1],
@@ -38,7 +49,10 @@ export const createUser = (name, birthDate) => async (dispatch) => {
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_TOKEN:
+    case CURRENT_SESSION:
+      console.log(action.payload);
+      return action.payload;
+    case LOGGIN:
       return action.payload;
     case CREATE_USER:
       return action.payload;
