@@ -15,6 +15,7 @@ const AddRoom = () => {
   const dispatch = useDispatch();
   const [cityId, setCityId] = useState(0);
   const [hotelId, setHotelId] = useState(0);
+  const [control, setControl] = useState(false);
 
   const [inputs, setInputs] = useState({
     description: '',
@@ -56,6 +57,7 @@ const AddRoom = () => {
       people_amount: inputs.peopleAmount,
       deleted: false,
     };
+    setControl(true);
     dispatch(postRoom(token, room));
   };
 
@@ -108,7 +110,7 @@ const AddRoom = () => {
           </button>
         </div>
       </Form>
-      {rooms.length === 0 ? <p className="text-success mt-2"> Room created succesfully </p> : <p />}
+      {rooms.length === 0 && control ? <p className="text-success mt-2"> Room created succesfully </p> : <p />}
     </section>
   );
 };
