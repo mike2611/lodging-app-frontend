@@ -48,6 +48,15 @@ const ReserveFromNavbar = () => {
       <Form onSubmit={handleSubmit}>
         <Dropdown>
           <Dropdown.Toggle className="mb-3" variant="success" id="dropdown-basic">
+            Select a city
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Dropdown.Item href="#/action-1">City Example</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+        <Dropdown>
+          <Dropdown.Toggle className="mb-3" variant="success" id="dropdown-basic">
             Select a Hotel
           </Dropdown.Toggle>
 
@@ -57,11 +66,11 @@ const ReserveFromNavbar = () => {
         </Dropdown>
         <Form.Group className="mb-3" controlId="add_room">
           <Form.Label>Description</Form.Label>
-          <Form.Control name="room_id" type="number" value={inputs.room_id} onChange={onChange} />
+          <Form.Control name="room_id" type="text" value={inputs.room_id} onChange={onChange} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="add_room">
           <Form.Label>Image</Form.Label>
-          <Form.Control name="room_id" type="number" value={inputs.room_id} onChange={onChange} />
+          <Form.Control name="room_id" type="text" value={inputs.room_id} onChange={onChange} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="add_room">
           <Form.Label>Price</Form.Label>
