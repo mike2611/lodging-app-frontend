@@ -1,0 +1,20 @@
+.main-section {
+  background-color: #98bf11;
+  position: relative;
+}
+
+.inner-div {
+  background: url('https://media-cdn.tripadvisor.com/media/photo-s/13/d8/ea/1b/a-room-at-the-beach.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+.main-content {
+  position: relative;
+}

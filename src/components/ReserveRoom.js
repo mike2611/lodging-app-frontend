@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import '../assets/css/newItems.css';
 import { clearReservationMsg, postReservation } from '../redux/reservations/reservationsReducer';
 
 const ReserveRoom = () => {
@@ -42,31 +43,34 @@ const ReserveRoom = () => {
   }, []);
 
   return (
-    <section className="container">
-      <h1>Book a room</h1>
-      <hr />
-      <p>
-        {`You have selected a room for ${room.people_amount} people with a price of ${room.price} 
-        per night in the hotel ${room.hotel.name} in ${room.hotel.address}, `}
-        <strong>
-          {room.hotel.city.name}
-        </strong>
-        . Now please select the Check-in date and the Check-out date to reserve your room.
-      </p>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="checkin">
-          <Form.Label>Check-in date</Form.Label>
-          <Form.Control name="checkin" type="date" min={today} value={inputs.checkin} onChange={onChange} />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="checkout">
-          <Form.Label>Check-out date</Form.Label>
-          <Form.Control name="checkout" type="date" min={inputs.checkin} value={inputs.checkout} onChange={onChange} />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Book now
-        </Button>
-      </Form>
-      { message !== '' && <p>{message}</p> }
+    <section className="main-section vh-100">
+      <div className="inner-div h-100" />
+      <div className="container main-content">
+        <h1>Book a room</h1>
+        <hr />
+        <p>
+          {`You have selected a room for ${room.people_amount} people with a price of ${room.price} 
+          per night in the hotel ${room.hotel.name} in ${room.hotel.address}, `}
+          <strong>
+            {room.hotel.city.name}
+          </strong>
+          . Now please select the Check-in date and the Check-out date to reserve your room.
+        </p>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="checkin">
+            <Form.Label>Check-in date</Form.Label>
+            <Form.Control name="checkin" type="date" min={today} value={inputs.checkin} onChange={onChange} />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="checkout">
+            <Form.Label>Check-out date</Form.Label>
+            <Form.Control name="checkout" type="date" min={inputs.checkin} value={inputs.checkout} onChange={onChange} />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Book now
+          </Button>
+        </Form>
+        { message !== '' && <p>{message}</p> }
+      </div>
     </section>
   );
 };
