@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@300&display=swap');
+
 body {
   background-color: transparent;
+}
+
+.main-links {
+  text-decoration: none;
 }
 
 .main-icons {
@@ -56,4 +62,12 @@ body {
   background-color: #98bf11;
   color: white;
   border: none;
+}
+
+.roboto-font {
+  font-family: 'Roboto', sans-serif;
+}
+
+.slab-font {
+  font-family: 'Roboto Slab', serif;
 }
