@@ -8,6 +8,7 @@ import NavBarMobile from './components/NavBarMobile';
 import Details from './components/Details';
 import MyReservations from './components/MyReservations';
 import ReserveRoom from './components/ReserveRoom';
+import ReserveFromNavbar from './components/ReserveFromNavbar';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import PrivateRoute from './components/PrivateRoute';
@@ -33,6 +34,7 @@ const App = () => {
         <Routes>
           <Route path="/room/:id" exact element={<PrivateRoute><Details /></PrivateRoute>} />
           <Route path="/room/:id/reserve" exact element={<PrivateRoute><ReserveRoom /></PrivateRoute>} />
+          <Route path="/reserve_room" exact element={<PrivateRoute><ReserveFromNavbar /></PrivateRoute>} />
           <Route path="/my_reservations/" exact element={<PrivateRoute><MyReservations /></PrivateRoute>} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
