@@ -36,13 +36,13 @@ const MyReservations = () => {
 
   return (
     <section className="container">
-      <h1>My Reservations</h1>
-      <h2>Current</h2>
+      <h1 className="roboto-font-bold text-center my-5">MY RESERVATIONS</h1>
+      <h2 className="roboto-font-bold">Current</h2>
       <ul>
         {(currentReserv.length === 0)
-          ? <p>You have no current reservations.</p>
+          ? <p className="roboto-font">You have no current reservations.</p>
           : currentReserv.map((reservation) => (
-            <li key={reservation.id} className="row">
+            <li key={reservation.id}>
               <Reservation
                 image={reservation.room.image}
                 hotel={reservation.room.hotel.name}
@@ -57,12 +57,12 @@ const MyReservations = () => {
             </li>
           ))}
       </ul>
-      <h2>Upcoming</h2>
+      <h2 className="roboto-font-bold">Upcoming</h2>
       <ul>
         {(futureReserv.length === 0)
           ? <p>You have no upcoming reservations.</p>
           : futureReserv.map((reservation) => (
-            <li key={reservation.id} className="row">
+            <li key={reservation.id}>
               <Reservation
                 image={reservation.room.image}
                 hotel={reservation.room.hotel.name}
@@ -77,12 +77,12 @@ const MyReservations = () => {
             </li>
           ))}
       </ul>
-      <h2>Past</h2>
+      <h2 className="roboto-font-bold">Past</h2>
       <ul>
         {(pastReserv.length === 0)
           ? <p>You have no past reservations.</p>
           : pastReserv.map((reservation) => (
-            <li key={reservation.id} className="row">
+            <li key={reservation.id}>
               <Reservation
                 image={reservation.room.image}
                 hotel={reservation.room.hotel.name}

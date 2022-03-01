@@ -7,19 +7,19 @@ const Reservation = (props) => {
   } = props;
 
   return (
-    <>
+    <div className="row my-3">
       <div className="col-md-3">
         <img src={image} alt="Room" className="img-fluid" />
       </div>
-      <div className="col-md-6">
-        <h3>{hotel}</h3>
-        <p>
+      <div className="col-md-5">
+        <h3 className="roboto-font">{hotel}</h3>
+        <p className="text-secondary slab-font">
           <strong>{city}</strong>
           {`, ${address}`}
         </p>
         <p>{description}</p>
       </div>
-      <div className="col-md-3">
+      <div className="col-md-4 roboto-font-medium">
         <p>
           {'Check-in Date: '}
           {checkin}
@@ -37,7 +37,7 @@ const Reservation = (props) => {
           {price * nights}
         </p>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -46,7 +46,7 @@ const ReserveRoom = () => {
       <div className="new-item-inner-div h-100" />
       <div className="d-flex align-items-center w-100 vh-100">
         <div className="d-flex flex-column align-items-center new-item-content">
-          <h1 className="roboto-font-bold text-center">Book a room</h1>
+          <h1 className="roboto-font-bold text-center">BOOK A ROOM</h1>
           <hr className="w-50" />
           <p className="roboto-font-medium w-75">
             {`You have selected a room for ${room.people_amount} people with a price of ${room.price} 
@@ -65,7 +65,7 @@ const ReserveRoom = () => {
               <Form.Label>Check-out date</Form.Label>
               <Form.Control name="checkout" type="date" min={inputs.checkin} value={inputs.checkout} onChange={onChange} />
             </Form.Group>
-            <Button className="new-item-btn" type="submit">
+            <Button className="new-item-btn mt-2" type="submit">
               Book now
             </Button>
           </Form>

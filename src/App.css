@@ -3,6 +3,10 @@ body {
   background-color: transparent;
 }
 
+li {
+  list-style-type: none;
+}
+
 .main-links {
   text-decoration: none;
 }
@@ -117,4 +121,9 @@ body {
 .new-item-btn:hover {
   background-color: white !important;
   color: #98bf11 !important;
+}
+
+.title-details {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
