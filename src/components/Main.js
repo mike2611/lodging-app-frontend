@@ -29,7 +29,7 @@ const Main = () => {
   return (
     <section className="d-flex flex-column align-items-center">
       <div className="d-flex flex-column align-items-center my-5">
-        <h1 className="roboto-font">Available Rooms</h1>
+        <h1 className="roboto-font-bold">AVAILABLE ROOMS</h1>
         <p className="slab-font">Please select a room</p>
       </div>
       <div className="d-flex flex-column flex-md-row align-items-center">
