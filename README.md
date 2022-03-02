@@ -8,7 +8,6 @@
 
 ### Desktop version
 
-![Desktop version](./desktop.png)
 ![Desktop version](https://user-images.githubusercontent.com/28109626/156388143-cda68993-fe79-4ca9-a922-22ff1eaf8257.png)
 
 ### Mobile version
