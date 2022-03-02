@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Roboto:wght@400;500;900&display=swap');
+
+body {
+  background-color: transparent;
+}
+
+li {
+  list-style-type: none;
+}
+
+.main-links {
+  text-decoration: none;
+}
+
+.main-icons {
+  list-style-type: none;
+}
+
+.main-button {
+  background-color: #98bf11;
+  border: none;
+}
+
+.main-semicircle-button {
+  height: 5rem;
+  width: 6rem;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.nav-logo {
+  width: 1rem;
+}
+
+.nav-menu {
+  flex-direction: column;
+}
+
+.nav-menu li {
+  font-size: 1.8rem;
+  list-style-type: none;
+}
+
+.nav-elements {
+  text-decoration: none;
+  color: #5a5a5a;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.active-style {
+  width: 200px;
+  background-color: #98bf11;
+  border-radius: 5%;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.login-image {
+  width: auto;
+  max-width: 150px;
+  height: auto;
+  max-height: 100px;
+}
+
+.login-btn {
+  background-color: #98bf11;
+  color: white;
+  border: none;
+}
+
+.roboto-font {
+  font-family: 'Roboto', sans-serif;
+}
+
+.roboto-font-medium {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.roboto-font-bold {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+}
+
+.slab-font {
+  font-family: 'Roboto Slab', serif;
+}
+
+.new-item-section {
+  background-color: #98bf11;
+  position: relative;
+}
+
+.new-item-inner-div {
+  background: url('https://media-cdn.tripadvisor.com/media/photo-s/13/d8/ea/1b/a-room-at-the-beach.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+.new-item-content {
+  position: relative;
+  color: white;
+}
+
+.new-item-btn {
+  background-color: #98bf11 !important;
+  color: white !important;
+  border: 1px solid white !important;
+  border-radius: 30px !important;
+  padding: 14px 50px !important;
+}
+
+.new-item-btn:hover {
+  background-color: white !important;
+  color: #98bf11 !important;
+}
+
+.title-details {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
