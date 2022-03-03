@@ -53,6 +53,17 @@ React-Bootstrap
 - Twitter: [@Octavio_ram431](https://twitter.com/Octavio_ram431)
 - LinkedIn: [Luis Octavio Ramirez Cruz](https://www.linkedin.com/in/luis-octavio-ramirez-cruz/) 
 
+## Kanban Board
+
+- Click [here](https://github.com/nachosala89/lodging-app-backend/projects/1) to see our Kanban Board.
+- Initial state:
+![screenshot](https://user-images.githubusercontent.com/51248936/154358537-848b6ce8-d79b-4946-bf42-6a67b8f656af.png)
+
+- We are 3 people:
+    - Team member 1: @LOctavio
+    - Team member 2: @mike2611
+    - Team member 3: @nachosala89
+
 ## Acknowledgment
 
 - Thanks to Murat Korkmaz, whose [design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) inspired us for the site layout.
