@@ -10,7 +10,7 @@ export const postReservation = (token, data) => async (dispatch) => {
     headers: { Authorization: `Bearer ${token}` },
   };
   let message = '';
-  const response = await axios.post('http://127.0.0.1:3000/api/v1/reservations', data, config).catch((error) => {
+  const response = await axios.post('https://radiant-thicket-51613.herokuapp.com/api/v1/reservations', data, config).catch((error) => {
     if (error.response) {
       message = error.response.data.message;
     }
@@ -26,7 +26,7 @@ export const fetchReservations = (token) => async (dispatch) => {
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-  const response = await axios.get('http://127.0.0.1:3000/api/v1/reservations', config);
+  const response = await axios.get('https://radiant-thicket-51613.herokuapp.com/api/v1/reservations', config);
   const reservations = Object.values(response.data);
   dispatch({
     type: FETCH_RESERVATIONS,

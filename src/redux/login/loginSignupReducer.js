@@ -15,7 +15,7 @@ export const currentSession = () => async (dispatch) => {
 
 export const loggin = (name) => async (dispatch) => {
   try {
-    const response = await axios.post(`http://localhost:3000/api/v1/login?name=${name}`);
+    const response = await axios.post(`https://radiant-thicket-51613.herokuapp.com/api/v1/login?name=${name}`);
     const token = Object.values(response.data);
     sessionStorage.setItem('auth_token', token);
     dispatch({
@@ -32,7 +32,7 @@ export const loggin = (name) => async (dispatch) => {
 
 export const createUser = (name, birthDate) => async (dispatch) => {
   try {
-    const response = await axios.post(`http://localhost:3000/api/v1/signup?name=${name}`, { params: { birth_date: birthDate } });
+    const response = await axios.post(`https://radiant-thicket-51613.herokuapp.com/api/v1/signup?name=${name}`, { params: { birth_date: birthDate } });
     const token = Object.values(response.data);
     sessionStorage.setItem('auth_token', token);
     dispatch({
