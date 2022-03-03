@@ -10,7 +10,7 @@ export const postRoom = (token, data) => async (dispatch) => {
     headers: { Authorization: `Bearer ${token}` },
   };
   let message = '';
-  const response = await axios.post('http://127.0.0.1:3000/api/v1/rooms', data, config).catch((error) => {
+  const response = await axios.post('https://radiant-thicket-51613.herokuapp.com/api/v1/rooms', data, config).catch((error) => {
     if (error.response) {
       message = error.response.data.message;
     }
@@ -26,7 +26,7 @@ export const fetchRooms = (token) => async (dispatch) => {
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-  const response = await axios.get('http://127.0.0.1:3000/api/v1/rooms', config);
+  const response = await axios.get('https://radiant-thicket-51613.herokuapp.com/api/v1/rooms', config);
   const rooms = Object.values(response.data);
   dispatch({
     type: FETCH_ROOMS,
@@ -36,10 +36,10 @@ export const fetchRooms = (token) => async (dispatch) => {
 
 export const deleteRoom = (token, id) => async (dispatch) => {
   const config = {
-    headers: { Authorization: `Bearer ${token}` },
+    headers: { Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDY0MjcxMTJ9.lNT6MQUPA7FkfpcHMtnHg53-tM_tUS64mkcod5ClIMY' },
   };
-  await axios.delete(`http://localhost:3000/api/v1/rooms/${id}`, config);
-  const response = await axios.get('http://127.0.0.1:3000/api/v1/rooms', config);
+  await axios.delete(`https://radiant-thicket-51613.herokuapp.com/api/v1/rooms/${id}`, config);
+  const response = await axios.get('https://radiant-thicket-51613.herokuapp.com/api/v1/rooms', config);
   const rooms = Object.values(response.data);
   dispatch({
     type: DELETE_ROOM,

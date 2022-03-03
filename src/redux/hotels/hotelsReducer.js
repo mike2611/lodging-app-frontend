@@ -7,7 +7,7 @@ export const fetchHotels = (token, cityId) => async (dispatch) => {
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-  const response = await axios.get(`http://127.0.0.1:3000/api/v1/cities/${cityId}/hotels`, config);
+  const response = await axios.get(`https://radiant-thicket-51613.herokuapp.com/api/v1/cities/${cityId}/hotels`, config);
   const cities = Object.values(response.data);
   dispatch({
     type: FETCH_HOTELS,
